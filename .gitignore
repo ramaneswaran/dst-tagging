@@ -127,3 +127,7 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+# Artifacts 
+data/artifacts/val/
+data/artifacts/val_v2/
