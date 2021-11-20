@@ -31,6 +31,20 @@
 
                     <form action="/form/save" method="post">
                         <table>
+                        <tr>
+                            <th>
+                                Entity
+                            </th>
+                            <th>
+                                Hint
+                            </th>
+                            <th>
+                                Input
+                            </th>
+                            <th>
+                                Current Value
+                            </th>
+                        </tr>
                         {%for idx, (ent, val) in item.entities.items()%}
                             <tr>
                                 <td>
@@ -41,6 +55,9 @@
                                 </td>
                                 <td>
                                     <input type="text" name={{idx}} id={{idx}} value={{item.annotations[idx][1]}}>
+                                </td>
+                                <td>
+                                    {{item.annotations[idx][1]}}
                                 </td>
                             </tr>
                         {%endfor%}

@@ -49,7 +49,7 @@ def post_data():
 def get_form():
     form_data = request.form.to_dict()
 
-    print(form_data)
+    # print(form_data)
 
     data_path = os.path.join(data_dir, f"{session['id']}.pkl")
     data = read_pkl_data(data_path)
@@ -58,6 +58,7 @@ def get_form():
 
     for idx, (ent, hint) in data['entities'].items():
         val = form_data[str(idx)]
+        print(val)
         annotations[idx] = [ent, val]
 
     data['annotations'] = annotations
@@ -86,6 +87,8 @@ def tag():
         data['annotations'] = data['entities']
 
 
+    print(data)
+    
     return render_template('tag.html', item=data)
 
 @app.route('/api/update/', methods=["GET"])
